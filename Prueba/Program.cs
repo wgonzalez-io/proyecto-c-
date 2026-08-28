@@ -4,14 +4,15 @@
     {
         Console.WriteLine("Ingrese su nombre:");
         string nombre = Console.ReadLine();
+
         Console.WriteLine("Ingrese un numero:");
-        int num1 = int.Parse(Console.ReadLine());
+        long num1 = long.Parse(Console.ReadLine());
         Console.WriteLine("Ingrese su segundo numero");
-        int num2 = int.Parse(Console.ReadLine());
-        int suma = num1 + num2;
-        int resta = num1 - num2;
-        int multiplicación = num1 * num2;
-        int división = num1 / num2;
+        long num2 = long.Parse(Console.ReadLine());
+        long suma = num1 + num2;
+        long resta = num1 - num2;
+        long multiplicación = num1 * num2;
+        long división = num1 / num2;
         Console.WriteLine("La suma fue:" + suma);
         Console.WriteLine("La resta fue:" + resta);
         Console.WriteLine("La multiplicación fue:" + multiplicación);

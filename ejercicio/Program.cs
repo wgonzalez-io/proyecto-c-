@@ -1,20 +1,52 @@
-﻿class Program
+﻿using System.Text.RegularExpressions;
+class Program
 {
     static void Main()
     {
         string nombre;
         long suma, resta, multiplicacion, num1, num2;
         double division;
-
+        bool valid = true;
+        bool numero;
+        do{
         Console.WriteLine("Ingresa tu nombre: ");
-        nombre = Console.ReadLine() ?? "";
+        nombre = (Console.ReadLine() ?? "").Trim();
+        if(Regex.IsMatch(nombre, @"^[\p{L} ]+$"))
+        {
+            Console.WriteLine("Nombre registrado con éxito\n");
+            valid=true;
+        }
+        else
+        {
+            Console.WriteLine("Solo puedes ingresar letras\n");
+            valid = false;     
+        }
+        }while(!valid);
 
+        do{
         Console.WriteLine("Ingresa tu primer numero: ");
-        num1 = long.Parse(Console.ReadLine() ?? "0");
-
+        numero = long.TryParse(Console.ReadLine() , out num1);
+            if (numero)
+            {
+                Console.WriteLine($"Numero ingresado correctamente: {num1}\n");
+            }
+            else
+            {
+                Console.WriteLine("Solo puedes ingresar numeros\n");
+            }
+        }while(!numero);
+        do{
         Console.WriteLine("Ingresa tu segundo numero: ");
-        num2 = long.Parse(Console.ReadLine() ?? "0");
-
+        numero = long.TryParse(Console.ReadLine(), out num2) && num2 != 0;
+            if (numero)
+            {
+                Console.WriteLine($"Numero ingresado correctamente: {num2}\n");
+            }
+            else
+            {
+                Console.WriteLine("Solo puedes ingresar numeros distintos de cero\n");
+            }
+        }while(!numero);
         suma = num1 + num2;
         resta = num1 - num2;
         multiplicacion = num1 * num2;

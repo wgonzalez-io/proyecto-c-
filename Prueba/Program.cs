@@ -1,11 +1,27 @@
-﻿class Program
+﻿using System.Runtime.InteropServices;
+
+class Program
 {
     static void Main(String [] args)
     {
-        Console.WriteLine("Ingrese su nombre:");
-        string nombre = Console.ReadLine();
-        long num1 = -1;
         bool comprobar = true;
+        long num1 = -1, num2 = -1;
+        do
+        {
+            Console.WriteLine("Ingrese su nombre:");
+        string nombre = Console.ReadLine();
+        if (nombre.All(c => char.IsLetter(c) || c == ' '))
+        {
+            Console.WriteLine("Nombre registrado correctamente");
+            comprobar = false;
+        } else
+        {
+            Console.WriteLine("Solo puede ingresar letras");
+            comprobar = true;
+        }
+        } while (comprobar);
+        
+        
         do {
         Console.WriteLine("Ingrese un numero:");
         if (long.TryParse(Console.ReadLine() , out num1))
@@ -19,9 +35,15 @@
             comprobar = true;
         }
         } while (comprobar);
-       
-        Console.WriteLine("Ingrese su segundo numero");
-        long num2 = long.Parse(Console.ReadLine());
+        Console.WriteLine(" ");
+        do
+        {
+            Console.WriteLine("Ingrese su segundo numero");
+            if (long.TryParse(Console.ReadLine(), out num2))
+            {
+                Console.WriteLine("Se registró correctamente");
+            }
+        } while (comprobar);
         long suma = num1 + num2;
         long resta = num1 - num2;
         long multiplicación = num1 * num2;

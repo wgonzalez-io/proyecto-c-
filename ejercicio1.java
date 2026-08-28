@@ -7,7 +7,5 @@ public class ejercicio1{
         System.out.println("La resta de x e y es:" + (x - y));
         System.out.println("La multiplicación de x e y es:" + (x * y));
         System.out.println("La división de x e y es:" + (x / y));
-
-
     }
 }

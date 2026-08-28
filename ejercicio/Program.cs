@@ -1,19 +1,21 @@
-﻿class Program
+﻿using System.Numerics;
+
+class Program
 {
     static void Main()
     {
         string nombre;
-        int suma, resta, multiplicacion, num1, num2;
+        long suma, resta, multiplicacion, num1, num2;
         double division;
 
         Console.WriteLine("Ingresa tu nombre: ");
         nombre = Console.ReadLine() ?? "";
 
         Console.WriteLine("Ingresa tu primer numero: ");
-        num1 = int.Parse(Console.ReadLine() ?? "0");
+        num1 = long.Parse(Console.ReadLine() ?? "0");
 
         Console.WriteLine("Ingresa tu segundo numero: ");
-        num2 = int.Parse(Console.ReadLine() ?? "0");
+        num2 = long.Parse(Console.ReadLine() ?? "0");
 
         suma = num1 + num2;
         resta = num1 - num2;

@@ -4,9 +4,22 @@
     {
         Console.WriteLine("Ingrese su nombre:");
         string nombre = Console.ReadLine();
-
+        long num1 = -1;
+        bool comprobar = true;
+        do {
         Console.WriteLine("Ingrese un numero:");
-        long num1 = long.Parse(Console.ReadLine());
+        if (long.TryParse(Console.ReadLine() , out num1))
+        {
+            Console.WriteLine("Se ingresó correctamente");
+            comprobar = false;
+        }
+        else
+        {
+            Console.WriteLine("SOLO PUEDE INGRESAR NUMEROS");
+            comprobar = true;
+        }
+        } while (comprobar);
+       
         Console.WriteLine("Ingrese su segundo numero");
         long num2 = long.Parse(Console.ReadLine());
         long suma = num1 + num2;

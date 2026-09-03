@@ -11,14 +11,14 @@ class Program
         do{
         Console.WriteLine("Ingresa tu nombre: ");
         nombre = (Console.ReadLine() ?? "").Trim();
-        if(Regex.IsMatch(nombre, @"^[\p{L} ]+$"))
+        if(Regex.IsMatch(nombre, @"^[\p{L} ]+$") && nombre.Length >= 5)
         {
             Console.WriteLine("Nombre registrado con éxito\n");
             valid=true;
         }
         else
         {
-            Console.WriteLine("Solo puedes ingresar letras\n");
+            Console.WriteLine("Solo puedes ingresar letras y el nombre debe tener al menos 5 caracteres\n");
             valid = false;     
         }
         }while(!valid);
